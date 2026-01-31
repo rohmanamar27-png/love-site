@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>For Peraanika Cahya 💖</title>
+
+  <style>
+    :root{
+      --bg1:#0b1021;
+      --bg2:#1a0b2e;
+      --pink:#ff4fd8;
+      --purple:#8a5bff;
+      --gold:#ffd36a;
+      --text:#f6f7ff;
+      --muted:rgba(246,247,255,.75);
+      --card:rgba(255,255,255,.08);
+      --card2:rgba(255,255,255,.12);
+      --stroke:rgba(255,255,255,.18);
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      overflow:hidden;
+      background: radial-gradient(1200px 700px at 15% 20%, rgba(255,79,216,.22), transparent 55%),
+                  radial-gradient(900px 600px at 85% 30%, rgba(138,91,255,.20), transparent 55%),
+                  radial-gradient(700px 500px at 45% 95%, rgba(255,211,106,.12), transparent 55%),
+                  linear-gradient(140deg, var(--bg1), var(--bg2));
+    }
+
+    /* animated sparkles */
+    .sparkles{
+      position:absolute; inset:0;
+      background-image:
+        radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,.6) 50%, transparent 52%),
+        radial-gradient(1.5px 1.5px at 35% 70%, rgba(255,255,255,.5) 50%, transparent 52%),
+        radial-gradient(1.2px 1.2px at 78% 35%, rgba(255,255,255,.45) 50%, transparent 52%),
+        radial-gradient(1.8px 1.8px at 62% 82%, rgba(255,255,255,.55) 50%, transparent 52%),
+        radial-gradient(1px 1px at 90% 60%, rgba(255,255,255,.4) 50%, transparent 52%);
+      opacity:.55;
+      animation: twinkle 4.8s ease-in-out infinite alternate;
+      pointer-events:none;
+    }
+    @keyframes twinkle{
+      from{ filter: drop-shadow(0 0 0 rgba(255,255,255,0)); transform: translateY(0); opacity:.35; }
+      to  { filter: drop-shadow(0 0 8px rgba(255,255,255,.28)); transform: translateY(-6px); opacity:.65; }
+    }
+
+    /* floating hearts */
+    .hearts{ position:absolute; inset:0; pointer-events:none; }
+    .heart{
+      position:absolute;
+      width:18px; height:18px;
+      transform: rotate(45deg);
+      opacity:.0;
+      animation: floatUp 7s linear infinite;
+      filter: drop-shadow(0 8px 18px rgba(255,79,216,.18));
+    }
+    .heart::before,.heart::after{
+      content:"";
+      position:absolute;
+      width:18px; height:18px;
+      background: linear-gradient(135deg, rgba(255,79,216,.95), rgba(138,91,255,.75));
+      border-radius: 50%;
+    }
+    .heart{ background: linear-gradient(135deg, rgba(255,79,216,.95), rgba(138,91,255,.75)); }
+    .heart::before{ left:-9px; top:0; }
+    .heart::after{ left:0; top:-9px; }
+    @keyframes floatUp{
+      0%   { transform: translateY(50px) translateX(0) rotate(45deg) scale(.9); opacity:0; }
+      10%  { opacity:.55; }
+      60%  { opacity:.38; }
+      100% { transform: translateY(-110vh) translateX(40px) rotate(45deg) scale(1.25); opacity:0; }
+    }
+
+    /* layout */
+    .wrap{
+      position:relative;
+      height:100%;
+      display:grid;
+      place-items:center;
+      padding:24px;
+    }
+
+    .card{
+      width:min(860px, 96vw);
+      background: linear-gradient(180deg, var(--card), rgba(255,255,255,.04));
+      border:1px solid var(--stroke);
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(700px 240px at 20% 0%, rgba(255,79,216,.20), transparent 55%),
+                  radial-gradient(540px 220px at 85% 15%, rgba(138,91,255,.18), transparent 60%),
+                  radial-gradient(420px 200px at 40% 100%, rgba(255,211,106,.10), transparent 60%);
+      pointer-events:none;
+    }
+
+    .inner{
+      position:relative;
+      padding: clamp(20px, 4vw, 40px);
+      display:grid;
+      gap:22px;
+    }
+
+    .badge{
+      width: fit-content;
+      font-size: 13px;
+      letter-spacing:.18em;
+      text-transform: uppercase;
+      color: rgba(246,247,255,.85);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 10px 14px;
+      border-radius: 999px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, #fff, var(--pink));
+      box-shadow: 0 0 18px rgba(255,79,216,.55);
+    }
+
+    h1{
+      margin:0;
+      font-size: clamp(28px, 4.2vw, 54px);
+      line-height:1.08;
+      letter-spacing:-.02em;
+      text-shadow: 0 14px 40px rgba(0,0,0,.35);
+    }
+
+    .grad{
+      background: linear-gradient(90deg, #ffffff, rgba(255,79,216,.95), rgba(138,91,255,.95), rgba(255,211,106,.95));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color: transparent;
+    }
+
+    p{
+      margin:0;
+      color: var(--muted);
+      font-size: clamp(14px, 2vw, 18px);
+      line-height:1.6;
+      max-width: 62ch;
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:8px;
+    }
+
+    button{
+      appearance:none;
+      border:none;
+      cursor:pointer;
+      padding: 12px 16px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text);
+      background: rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      transition: transform .12s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+      box-shadow: 0 10px 26px rgba(0,0,0,.28);
+      user-select:none;
+      position:relative;
+    }
+    button:hover{
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.14);
+      border-color: rgba(255,255,255,.24);
+    }
+    button:active{ transform: translateY(0px) scale(.99); }
+
+    .primary{
+      background: linear-gradient(135deg, rgba(255,79,216,.95), rgba(138,91,255,.95));
+      border-color: rgba(255,79,216,.35);
+      box-shadow: 0 14px 40px rgba(255,79,216,.20);
+    }
+    .primary:hover{
+      background: linear-gradient(135deg, rgba(255,79,216,1), rgba(138,91,255,1));
+      box-shadow: 0 16px 46px rgba(138,91,255,.22);
+    }
+
+    .ghost{
+      background: rgba(255,255,255,.08);
+    }
+
+    .panel{
+      display:none;
+      animation: pop .35s ease both;
+    }
+    .panel.active{ display:block; }
+    @keyframes pop{
+      from{ opacity:0; transform: translateY(10px) scale(.98); }
+      to  { opacity:1; transform: translateY(0) scale(1); }
+    }
+
+    /* playful "run away" button */
+    .runaway{
+      position:relative;
+      outline: none;
+    }
+    .runaway::after{
+      content:"(jangan pilih ini 😝)";
+      position:absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -28px;
+      font-size: 12px;
+      color: rgba(246,247,255,.7);
+      opacity:.9;
+      white-space:nowrap;
+    }
+
+    /* success modal */
+    .overlay{
+      position:absolute; inset:0;
+      background: rgba(5,6,14,.55);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display:none;
+      place-items:center;
+      padding:18px;
+    }
+    .overlay.show{ display:grid; }
+
+    .modal{
+      width:min(760px, 96vw);
+      border-radius: 26px;
+      background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.06));
+      border:1px solid rgba(255,255,255,.20);
+      box-shadow: 0 22px 70px rgba(0,0,0,.55);
+      padding: clamp(18px, 3vw, 34px);
+      position:relative;
+      overflow:hidden;
+    }
+    .modal::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(520px 220px at 20% 0%, rgba(255,79,216,.28), transparent 60%),
+                  radial-gradient(520px 220px at 80% 20%, rgba(138,91,255,.24), transparent 60%),
+                  radial-gradient(520px 240px at 50% 100%, rgba(255,211,106,.14), transparent 62%);
+      pointer-events:none;
+    }
+    .modal > *{ position:relative; }
+
+    .big{
+      font-size: clamp(22px, 3.2vw, 38px);
+      margin:0 0 10px 0;
+      line-height:1.15;
+    }
+    .small{
+      margin:0 0 18px 0;
+      color: rgba(246,247,255,.78);
+    }
+
+    /* confetti canvas */
+    canvas#confetti{
+      position:absolute; inset:0;
+      pointer-events:none;
+    }
+
+    /* footer */
+    .footer{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      margin-top:10px;
+      color: rgba(246,247,255,.55);
+      font-size: 12px;
+    }
+    .footer .pill{
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+    }
+
+    @media (max-width:520px){
+      .runaway::after{ display:none; }
+      .actions{ gap:10px; }
+      button{ width:100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sparkles"></div>
+  <div class="hearts" id="hearts"></div>
+
+  <div class="wrap">
+    <div class="card" id="card">
+      <div class="inner">
+
+        <!-- PANEL 1: Welcome -->
+        <section class="panel active" id="panel1" aria-live="polite">
+          <div class="badge"><span class="dot"></span> a tiny love portal</div>
+
+          <h1>
+            <span class="grad">wellcome my pretty girl</span><br/>
+            <span style="color:rgba(246,247,255,.95)">Peraanika Cahya</span> 💖
+          </h1>
+
+          <p>
+            Aku bikin halaman kecil ini khusus buat kamu.
+            Kalau kamu senyum sekarang… berarti misiku sukses 😌✨
+          </p>
+
+          <div class="actions">
+            <button class="primary" id="btnStart">Tekan ini ya 😳</button>
+            <button class="ghost" id="btnPeek" title="Cuma hiasan">Aku penasaran…</button>
+          </div>
+
+          <div class="footer">
+            <div class="pill">💌 mode: romantis</div>
+            <div class="pill">🔒 akses: cuma kamu</div>
+          </div>
+        </section>
+
+        <!-- PANEL 2: Choice -->
+        <section class="panel" id="panel2" aria-live="polite">
+          <div class="badge"><span class="dot"></span> question time</div>
+
+          <h1>
+            Kamu mau jadi <span class="grad">alasan aku senyum</span> tiap hari? 🫶
+          </h1>
+
+          <p>
+            Pilih satu jawaban yaa… tapi yang satu lagi itu memang ngeselin,
+            soalnya dia suka kabur-kaburan 🤭
+          </p>
+
+          <div class="actions" style="margin-top:14px">
+            <button class="primary" id="btnYes">Iya, mau banget 🥰</button>
+            <button class="ghost runaway" id="btnNo">Enggak 😶</button>
+          </div>
+
+          <div class="footer">
+            <div class="pill">📍 status: deg-degan</div>
+            <div class="pill">✨ hint: pilih yang baik</div>
+          </div>
+        </section>
+
+        <!-- Overlay modal -->
+        <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Love message">
+          <div class="modal">
+            <canvas id="confetti"></canvas>
+            <h2 class="big">Yeay! Aku resmi jadi fans nomor 1 kamu 😭💘</h2>
+            <p class="small">
+              Makasih yaa, <b>Sayangku Cintakuwwh maniskuwwh</b>.  
+              kamu boleh minta apa aja… asal jangan minta berhenti sayang 😌
+            </p>
+
+            <div class="actions">
+              <button class="primary" id="btnReplay">Ulangi lagi 💞</button>
+              <button class="ghost" id="btnClose">Tutup (tapi sayang jalan terus)</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ----- floating hearts generator -----
+    const heartsWrap = document.getElementById('hearts');
+    const heartCount = 14;
+    for (let i = 0; i < heartCount; i++){
+      const h = document.createElement('div');
+      h.className = 'heart';
+      const left = Math.random() * 100;
+      const delay = Math.random() * 5;
+      const dur = 6 + Math.random() * 6;
+      const size = 12 + Math.random() * 16;
+      h.style.left = left + 'vw';
+      h.style.animationDelay = delay + 's';
+      h.style.animationDuration = dur + 's';
+      h.style.width = size + 'px';
+      h.style.height = size + 'px';
+      heartsWrap.appendChild(h);
+    }
+
+    // ----- panels -----
+    const panel1 = document.getElementById('panel1');
+    const panel2 = document.getElementById('panel2');
+    const btnStart = document.getElementById('btnStart');
+    const btnPeek  = document.getElementById('btnPeek');
+
+    btnStart.addEventListener('click', () => {
+      panel1.classList.remove('active');
+      panel2.classList.add('active');
+    });
+
+    btnPeek.addEventListener('click', () => {
+      // small playful toast
+      const toast = document.createElement('div');
+      toast.textContent = "Hehe… ini cuma biar kamu makin gemes 😚";
+      toast.style.position = 'fixed';
+      toast.style.left = '50%';
+      toast.style.top = '20px';
+      toast.style.transform = 'translateX(-50%)';
+      toast.style.background = 'rgba(255,255,255,.10)';
+      toast.style.border = '1px solid rgba(255,255,255,.18)';
+      toast.style.padding = '10px 14px';
+      toast.style.borderRadius = '999px';
+      toast.style.boxShadow = '0 14px 40px rgba(0,0,0,.35)';
+      toast.style.backdropFilter = 'blur(10px)';
+      toast.style.zIndex = 9999;
+      document.body.appendChild(toast);
+      setTimeout(() => { toast.remove(); }, 1500);
+    });
+
+    // ----- runaway button behavior -----
+    const btnNo = document.getElementById('btnNo');
+    const card = document.getElementById('card');
+
+    function moveRunawayButton(){
+      const cardRect = card.getBoundingClientRect();
+      const btnRect  = btnNo.getBoundingClientRect();
+
+      // choose a new position inside the card area (safe margins)
+      const margin = 18;
+      const maxX = cardRect.width - btnRect.width - margin*2;
+      const maxY = cardRect.height - btnRect.height - margin*2;
+
+      const x = margin + Math.random() * Math.max(10, maxX);
+      const y = margin + Math.random() * Math.max(10, maxY);
+
+      // animate movement
+      btnNo.style.position = 'absolute';
+      btnNo.style.left = x + 'px';
+      btnNo.style.top  = y + 'px';
+      btnNo.style.transition = 'left .18s ease, top .18s ease, transform .18s ease';
+      btnNo.style.transform = 'rotate(' + ((Math.random()*10)-5).toFixed(1) + 'deg)';
+    }
+
+    // make it run away on hover/touch
+    btnNo.addEventListener('mouseenter', moveRunawayButton);
+    btnNo.addEventListener('touchstart', (e) => { e.preventDefault(); moveRunawayButton(); }, {passive:false});
+    btnNo.addEventListener('click', (e) => { e.preventDefault(); moveRunawayButton(); });
+
+    // reset runaway button position when entering panel2
+    const observer = new MutationObserver(() => {
+      if (panel2.classList.contains('active')){
+        // put it near the actions initially
+        btnNo.style.position = 'relative';
+        btnNo.style.left = 'auto';
+        btnNo.style.top = 'auto';
+        btnNo.style.transform = 'none';
+      }
+    });
+    observer.observe(panel2, { attributes:true, attributeFilter:['class'] });
+
+    // ----- YES button: show modal + confetti -----
+    const btnYes = document.getElementById('btnYes');
+    const overlay = document.getElementById('overlay');
+    const btnClose = document.getElementById('btnClose');
+    const btnReplay = document.getElementById('btnReplay');
+
+    btnYes.addEventListener('click', () => {
+      overlay.classList.add('show');
+      startConfetti();
+    });
+
+    function closeOverlay(){
+      overlay.classList.remove('show');
+      stopConfetti();
+    }
+    btnClose.addEventListener('click', closeOverlay);
+
+    btnReplay.addEventListener('click', () => {
+      closeOverlay();
+      // reset to panel 1
+      panel2.classList.remove('active');
+      panel1.classList.add('active');
+      // reset runaway button
+      btnNo.style.position = 'relative';
+      btnNo.style.left = 'auto';
+      btnNo.style.top = 'auto';
+      btnNo.style.transform = 'none';
+    });
+
+    // click outside modal closes
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeOverlay();
+    });
+
+    // ----- confetti (simple canvas) -----
+    const canvas = document.getElementById('confetti');
+    const ctx = canvas.getContext('2d');
+    let confettiTimer = null;
+    let pieces = [];
+
+    function resizeCanvas(){
+      const modal = overlay.querySelector('.modal');
+      const r = modal.getBoundingClientRect();
+      canvas.width = Math.floor(r.width);
+      canvas.height = Math.floor(r.height);
+    }
+
+    function makePieces(){
+      pieces = [];
+      const count = 140;
+      for (let i=0;i<count;i++){
+        pieces.push({
+          x: Math.random()*canvas.width,
+          y: Math.random()*canvas.height - canvas.height,
+          w: 6 + Math.random()*8,
+          h: 8 + Math.random()*14,
+          vx: -1.5 + Math.random()*3,
+          vy: 2 + Math.random()*4.5,
+          rot: Math.random()*Math.PI,
+          vr: (-0.2 + Math.random()*0.4),
+          a: 0.75 + Math.random()*0.25
+        });
+      }
+    }
+
+    function draw(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      for (const p of pieces){
+        p.x += p.vx;
+        p.y += p.vy;
+        p.rot += p.vr;
+        if (p.y > canvas.height + 30) {
+          p.y = -20;
+          p.x = Math.random()*canvas.width;
+        }
+        // use gradients without specifying exact palette beyond theme variables
+        const g = ctx.createLinearGradient(p.x, p.y, p.x+p.w, p.y+p.h);
+        g.addColorStop(0, "rgba(255,79,216,"+p.a+")");
+        g.addColorStop(1, "rgba(138,91,255,"+p.a+")");
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.fillStyle = g;
+        ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+        ctx.restore();
+      }
+    }
+
+    function loop(){
+      draw();
+      confettiTimer = requestAnimationFrame(loop);
+    }
+
+    function startConfetti(){
+      resizeCanvas();
+      makePieces();
+      window.addEventListener('resize', resizeCanvas);
+      if (!confettiTimer) loop();
+    }
+
+    function stopConfetti(){
+      window.removeEventListener('resize', resizeCanvas);
+      if (confettiTimer){
+        cancelAnimationFrame(confettiTimer);
+        confettiTimer = null;
+      }
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+    }
+  </script>
+</body>
+</html>
